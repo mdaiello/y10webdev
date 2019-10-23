@@ -551,9 +551,3 @@ spaceframe.pack(fill=X)
 
 
 
-
-
-
-
-
-
