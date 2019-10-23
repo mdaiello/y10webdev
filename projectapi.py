@@ -27,7 +27,7 @@ def openfile():
     ofile.write(".header {")
     ofile.write("padding: 60px;")
     ofile.write("text-align: center;")
-    ofile.write("background: #1abc9c;")
+    ofile.write("background: #4045D2;")
     ofile.write("color: white;")
     ofile.write("font-size: 30px;")
     ofile.write("}")
@@ -124,7 +124,7 @@ def openfile1():
     ofile.write(".header {")
     ofile.write("padding: 60px;")
     ofile.write("text-align: center;")
-    ofile.write("background: #1abc9c;")
+    ofile.write("background: #4045D2;")
     ofile.write("color: white;")
     ofile.write("font-size: 30px;")
     ofile.write("}")
@@ -138,7 +138,7 @@ def openfile1():
     ofile.write("</body>")
     ofile.write("</html>")
     ofile.write("<style>")
-    ofile.write("<center><img src=cancer.jpg width=300 height=300></center>")
+    ofile.write("<center><img src=cancer1.jpg width=1000 height=1000></center>")
     ofile.write("table {")
     ofile.write("font-family: arial, sans-serif;")
     ofile.write("border-collapse: collapse;")
@@ -210,7 +210,7 @@ def openfile2():
     ofile.write(".header {")
     ofile.write("padding: 60px;")
     ofile.write("text-align: center;")
-    ofile.write("background: #1abc9c;")
+    ofile.write("background: #4045D2;")
     ofile.write("color: white;")
     ofile.write("font-size: 30px;")
     ofile.write("}")
@@ -297,7 +297,7 @@ def openfile3():
     ofile.write(".header {")
     ofile.write("padding: 60px;")
     ofile.write("text-align: center;")
-    ofile.write("background: #1abc9c;")
+    ofile.write("background: #4045D2;")
     ofile.write("color: white;")
     ofile.write("font-size: 30px;")
     ofile.write("}")
@@ -386,7 +386,7 @@ def openfile5():
     ofile.write(".header {")
     ofile.write("padding: 60px;")
     ofile.write("text-align: center;")
-    ofile.write("background: #1abc9c;")
+    ofile.write("background: #4045D2;")
     ofile.write("color: white;")
     ofile.write("font-size: 30px;")
     ofile.write("}")
@@ -541,13 +541,6 @@ button = tk.Button(frame,
 button.pack(padx=0, pady=12)
 button.config( height = 3, width = 60)
 spaceframe.pack(fill=X)
-
-
-
-
-
-
-
 
 
 
