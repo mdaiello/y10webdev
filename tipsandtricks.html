@@ -1,7 +1,6 @@
 <html>
-
-    <link href="imptoast.html" rel="import" />
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <nav class="nav">
         <div class="container">
             <div class="logo">
@@ -26,20 +25,96 @@
     </section>
     <div style="height: 1000px">
         <!-- just to make scrolling effect possible -->
-			<h1 class="myH2">Covid - 19 Data (Map)</h1>
-        <p class="myP">
+			<h1 class="myH2">Tips & Tricks Page </h1>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+    .card-body{
+        height: 300px;
+        width: auto;
+    }
+</style>
+</head>
+<body>
+
+<div class="row">
+  <div class="column" style="background-color:white;">
+<div class="card">
+  <div class="card-header" ><font size="6">
+    How to stay healthy
+      </font></div>
+  <div class="card-body">
+    <h5 class="card-title"><font size="4">Here are some tips & tricks...</font></h5>
+    <p class="card-text"><font size="3">- Wash your hands regularly</font></p>
+          <p class="card-text"><font size="3">- Avoid contact with others</font></p>
+          <p class="card-text"><font size="3">- Wear a face mask and carry hand sanitizer when outside</font></p>
+          <p class="card-text"><font size="3">- Avoid non-essential travel</font></p>
+  </div>
+</div>
+  </div>
+  <div class="column" style="background-color:white;">
+<div class="card">
+<div class="card-header" ><font size="6">
+    How to stay active
+      </font></div>
+  <div class="card-body">
+    <h5 class="card-title"><font size="4.5">Here are some tips & tricks...</font></h5>
+    <p class="card-text"><font size="3">- Go for walks around your neighborhourd (maintain distance from others)</font></p>
+          <p class="card-text"><font size="3">- Participate in at home excercises and workouts</font></p>
+          <p class="card-text"><font size="3">- Avoid bad eating habits</font></p>
+          <p class="card-text"><font size="3">- Maintain proper vitamin intake</font></p>
+  </div>
+</div>
+  </div>
+  <div class="column" style="background-color:white;">
+<div class="card">
+<div class="card-header" ><font size="6">
+    Support our Healthcare workers
+      </font></div>
+  <div class="card-body">
+    <h5 class="card-title"><font size="4.5">Donate at...</font></h5>
+    <p class="card-text"><font size="3"><a href="https://donate.redcross.ca/page/55441/donate/1?locale=en-CA">Red Cross</a></font></p>
+      <p class="card-text"><font size="3"><a href="https://www.canadahelps.org/en/donate-to-covid-19-hospital-and-healthcare-charities/">Support Healthcare workers</a></font></p>
+            <p class="card-text"><font size="3"><a href="https://www.covenanthousedonations.ca/?gclid=EAIaIQobChMIl7u3p_2I6QIVEtRkCh2pxARCEAAYASAAEgL03PD_BwE&gclsrc=aw.ds">Covenant House Donations</a></font></p>
+            <p class="card-text"><font size="3"><a href="https://chinaconcern.org/coronavirus-response/?gclid=EAIaIQobChMIl7u3p_2I6QIVEtRkCh2pxARCEAAYAyAAEgLtSPD_BwE">Chinese Relief Fund</a></font></p>
+      
+      
+  </div>
+</div>
+  </div>
+</div>
+
+    
+</body>
+</html>
 
 
-        </p>
-				<p class="myP">
-
-        <section class="home1">
-        </section>
-                <h1 class="myH3">Covid - 19 Data (Chart)</h1>
-
-        <section class="home2">
-            <center><img scr="chart.jpg.png"></center>
-        </section>
     </div>
 
 <!-- Jquery needed -->
@@ -56,7 +131,7 @@
                 $('.nav').removeClass('affix');
             }
         });
-
+        
         $('.navTrigger').click(function () {
     $(this).toggleClass('active');
     console.log("Clicked menu");
@@ -65,7 +140,6 @@
 
 });
 
-        
     </script>
     <style>
     @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
@@ -146,25 +220,8 @@ body {
 .home {
     width: 100%;
     height: 100vh;
-    background-image: url(https://tr1.cbsistatic.com/hub/i/r/2020/03/04/9e27bb52-2b9b-4b28-97ac-1ab4b6ff6a7a/resize/1200x/21d6ef3b5c77126bf07ef9138794a055/istock-1205872351.jpg);
+    background-image: url(https://www.bibliotheca.com/wp-content/uploads/2020/03/covid-19.jpg);
     background-position: center top;
-	background-size:cover;
-}
-
-    .home1 {
-    width: 100%;
-    height: 100vh;
-    background-image: url(map.jpg.png);
-    background-position: center top;
-	background-size:cover;
-}
-
-        .home2 {
-    width: 35%;
-    height: 30vh;
-    background-image: url(chart.jpg.png);
-    background-position: center top;
-    image-orientation: center;
 	background-size:cover;
 }
 
@@ -436,12 +493,9 @@ body {
 .myH2 {
 	text-align:center;
 	font-size: 6rem;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
-
-        .myH3 {
-            text-align: center;
-            font-size: 6rem;
-        }
 .myP {
 	text-align: justify;
 	padding-left:15%;
@@ -453,8 +507,7 @@ body {
 		padding:2%;
 	}
 }
-
-    </style>
     
-
+    </style>
     </html>
+    
