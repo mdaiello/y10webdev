@@ -64,7 +64,7 @@
 </head>
 <body>
 
-<div class="row">
+<div class="cols">
   <div class="column" style="background-color:white;">
 <div class="card">
   <div class="card-header" ><font size="6">
@@ -139,12 +139,22 @@
   display: table;
   clear: both;
 }
+
+    .vids{
+        padding-left: 75px;
+    }
+    
+    .cols{
+        padding-left: 75px;
+        padding-right: 75px;
+        padding-bottom: 5px;
+    }
 </style>
 </head>
 <body>
 
 
-<div class="row">
+<div class="vids">
   <div class="column">
         <p><iframe width="560" height="315" src="https://www.youtube.com/embed/BtN-goy9VOY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
   </div>
@@ -219,7 +229,7 @@ body {
 }
 
 .nav div.logo a:hover {
-    color: black;
+    color:  #00E676;
 }
 
 .nav div.main_list {
@@ -251,7 +261,7 @@ body {
 }
 
 .nav div.main_list ul li a:hover {
-    color: black;
+    color:  #00E676;
 }
 
 
@@ -326,6 +336,9 @@ body {
         display: block;
     }
 }
+        div.fake{
+            color: white;
+        }
 
 
 /* Animation */
@@ -526,10 +539,6 @@ body {
 }
 
 
-
-
-
-
 .myH2 {
 	text-align:center;
 	font-size: 6rem;
@@ -542,6 +551,11 @@ body {
 	padding-right:15%;
 	font-size: 20px;
 }
+        
+        div.chatsection{
+            
+        padding-top: 50px;
+        }
 @media all and (max-width:700px){
 	.myP {
 		padding:2%;
@@ -549,20 +563,61 @@ body {
 }
     
     </style>
-    
-        
-    <html>
-        <div>
-<center><h1>Got your own tips? Share them down below</h1></center>
+
+    <div class="chatsection">
+        <div class="fake">
+    <center><h1>Got your own tips and tricks, tap this link to share!</h1></center>
+            <center><h1>Got your own tips and tricks, tap this link to share!</h1></center>
+            <center><h1>Got your own tips and tricks, tap this link to share!</h1></center>
+
+    </div>
+
     <script src="https://www.gstatic.com/firebasejs/5.7.3/firebase.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <center><h1 style="font-size:60px">Welcome to the interactive chat section!</h1></center>
+        <br>
+    <center><h3 style="font-size:30px">Remember to sign in before you post!</h3></center>
+        <br>
+    
     <style>
         tr:hover {background-color: #f5f5f5;}
         th, td {
             border-bottom: 1px solid #ddd;
         }
+        
+        div.submits{
+            padding-bottom: 15px;
+            padding-left: 25px;
+            padding-right: 5px;
+            height: 50px;
+            width: 100px;
+        }
+        
+        div.submits1{
+            padding-bottom: 15px;
+            padding-left: 25px;
+            padding-right: 5px;
+            height: 50px;
+            width: 100px;
+        }
+        
+        div.row{
+            padding: inherit;
+        }
     
+    
+        div.justbuttons1{
+            padding-top: 20px;
+        }
+                div.justbuttons2{
+            padding-top: 20px;
+        }
+                div.justbuttons3{
+            padding-top: 20px;
+        }
     </style>
     <script>
         
@@ -596,8 +651,7 @@ body {
                 mydiv = document.getElementById("mydata");
                 mydiv.innerHTML = name
                 myphotodiv = document.getElementById("myphoto");
-                myphotodiv.innerHTML = "<img src='" + imageUrl + "'/>";
-
+        
                 firebase.database().ref('/tweets').once('value').then(function(snapshot) {
                     var data = (snapshot.val());
                     if (data == null) {
@@ -737,30 +791,41 @@ body {
 
     
     </script>
+    
+    
+        <div class="input-group input-group-lg">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-lg" style="font-size:20px">Your Text</span>
+  </div>
+  <input type="text" id="twit" name="thetweet" cols="10" rows="4"class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+</div>
+    <div class="justbuttons1">
+    <ul>
+        <ol><button type="button" class="btn btn-info btn-lg" onclick="signin()" style="font-size:15px">Sign in</button></ol>
+                </ul>
+            </div>
+        
+        <div class="justbuttons2">
+            <ul>
+        <ol><button type="button" class="btn btn-info btn-lg" onclick="signout()"style="font-size:15px">Sign out</button></ol>
+                </ul>
+            </div>
 
-    <body>
-        <button onclick="signin()">Sign in</button>
-        <button onclick="signout()">Sign out</button>
-        <br>
-    
-        <form>
-            Tweet:<br>
-            <textarea id="twit" type="text" name="thetweet" cols="100" rows="4"></textarea>
-        </form> 
-        <button type="button" onclick="tweet()">Submit</button>
-    
-        <br><input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
+        <div class="justbuttons3">
+                    <ul>
+        <ol><button type="button" class="btn btn-info btn-lg" type="button" name="action" onclick="tweet()"style="font-size:15px">Submit</button></ol>
+            </ul>
+            </div>
+
+
+        
         <div id="imgTest" style="display:none;"></div>
         
     <div id="mytweets"></div>
-    <div id="mydata"></div>
-    <div id="myphoto"></div>
-        
-        
-        
-        
-    </body>
 
-    </div>
+
+
+</div>
     </html>
+    
     
