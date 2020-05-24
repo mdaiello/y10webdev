@@ -1,0 +1,155 @@
+<html>
+<!-- @NOTE: the onclicks are used for touch devices since I'm lazy and didnt use <a> tags -->
+<div class="Menu">
+  <ul class="Menu-list" data-offset="10">
+    <li class="Menu-list-item" data-offset="20" onclick>
+      Home
+      <span class="Mask" value="Open Window" onclick="openWin()"><span>Home</span></span>
+      <span class="Mask" value="Open Window" onclick="openWin()"><span>Home</span></span>
+    </li>
+    <li class="Menu-list-item" data-offset="16" onclick>
+      Covid 19 Data
+      <span class="Mask" value="Open Window" onclick="openWin2()"><span>Covid 19 Data</span></span>
+      <span class="Mask" value="Open Window" onclick="openWin2()"><span>Covid 19 Data</span></span>
+    </li>
+    <li class="Menu-list-item" data-offset="12" onclick>
+      Tips & Tricks
+      <span class="Mask" value="Open Window" onclick="openWin1()"><span>Tips & Tricks</span></span>
+      <span class="Mask" value="Open Window" onclick="openWin1()"><span>Tips & Tricks</span></span>
+    </li>
+    
+  </ul>
+</div>
+<style>
+    
+    body {
+	 font-family: "Gilroy ExtraBold", system-ui, sans-serif;
+	 font-style: normal;
+	 font-weight: normal;
+	 -webkit-font-smoothing: antialiased;
+	 -webkit-font-kerning: normal;
+	 -webkit-text-size-adjust: 100%;
+}
+ html, body {
+	 width: 100vw;
+	 height: 100vh;
+}
+ body {
+	 background-color: cornflowerblue;
+	 transform-style: preserve-3d;
+	 transform: perspective(100rem);
+	 position: fixed;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+}
+ .Menu-list {
+	 font-size: 4.25rem;
+	 line-height: 1.2;
+	 text-transform: uppercase;
+	 text-align: center;
+	 display: flex;
+	 flex-direction: column;
+	 align-items: center;
+	 transform: rotateX(-10deg) rotateY(20deg);
+}
+ .Menu-list-item {
+	 position: relative;
+	 color: transparent;
+	 cursor: pointer;
+}
+ .Menu-list-item::before {
+	 content: '';
+	 display: block;
+	 position: absolute;
+	 top: 49%;
+	 left: -10%;
+	 right: -10%;
+	 height: 4px;
+	 border-radius: 4px;
+	 margin-top: -2px;
+	 background: black;
+	 transform: scale(0);
+	 transition: transform 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+	 z-index: 1;
+}
+ .Mask {
+	 display: block;
+	 position: absolute;
+	 overflow: hidden;
+	 color: black;
+	 top: 0;
+	 height: 49%;
+	 transition: all 0.8s cubic-bezier(0.16, 1.08, 0.38, 0.98);
+}
+ .Mask span {
+	 display: block;
+}
+ .Mask + .Mask {
+	 top: 48.9%;
+	 height: 51.1%;
+}
+ .Mask + .Mask span {
+	 transform: translateY(-49%);
+}
+ .Menu-list-item:hover .Mask, .Menu-list-item:active .Mask {
+	 color: #fff;
+	 transform: skewX(12deg) translateX(5px);
+}
+ .Menu-list-item:hover .Mask + .Mask, .Menu-list-item:active .Mask + .Mask {
+	 transform: skewX(12deg) translateX(-5px);
+}
+ .Menu-list-item:hover::before, .Menu-list-item:active::before {
+	 transform: scale(1);
+}
+
+    </style>
+    
+<script>
+
+    var $menu = $('.Menu-list'),
+    $item = $('.Menu-list-item'),
+    w = $(window).width(), //window width
+    h = $(window).height(); //window height
+
+$(window).on('mousemove', function(e) {
+  var offsetX = 0.5 - e.pageX / w, //cursor position X
+      offsetY = 0.5 - e.pageY / h, //cursor position Y
+      dy = e.pageY - h / 2, //@h/2 = center of poster
+      dx = e.pageX - w / 2, //@w/2 = center of poster
+      theta = Math.atan2(dy, dx), //angle between cursor and center of poster in RAD
+      angle = theta * 180 / Math.PI - 90, //convert rad in degrees
+      offsetPoster = $menu.data('offset'),
+      transformPoster = 'translate3d(0, ' + -offsetX * offsetPoster + 'px, 0) rotateX(' + (-offsetY * offsetPoster) + 'deg) rotateY(' + (offsetX * (offsetPoster * 2)) + 'deg)'; //poster transform
+
+  //get angle between 0-360
+  if (angle < 0) {
+    angle = angle + 360;
+  }
+
+  //poster transform
+  $menu.css('transform', transformPoster);
+
+  //parallax for each layer
+  $item.each(function() {
+    var $this = $(this),
+        offsetLayer = $this.data('offset') || 0,
+        transformLayer = 'translate3d(' + offsetX * offsetLayer + 'px, ' + offsetY * offsetLayer + 'px, 20px)';
+
+    $this.css('transform', transformLayer);
+  });
+});
+    
+    function openWin() {
+  window.open("index.html");
+}
+    
+    function openWin1(){
+        window.open("tipsandtricks.html")
+    }
+    
+        function openWin2(){
+        window.open("covid19data.html")
+    }
+    </script>    
+</html>
